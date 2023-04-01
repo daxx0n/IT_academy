@@ -9,7 +9,9 @@ print ("Шаг 6.1 Собственные упражнения - ", a.swapcase()
 print ("Шаг 6.2 Собственные упражнения - ", a.lower(), "- все символы - строчные.")
 print ("Шаг 6.3 Собственные упражнения - ", a.rfind("а"), "- индекс последнего вхождения символа 'а' в строке")
 
-x = a.replace(",", " ,") # Для шага 7 корректнее будет сначала отделить знаки препинания, и только после этого делать реверс.
+# For step 7, it would be more correct to first separate the punctuation marks, and only after that do the reverse.
+
+x = a.replace(",", " ,") 
 x1 = x.replace (".", " .")
 x2 = x1.replace ("!", " !")
 
