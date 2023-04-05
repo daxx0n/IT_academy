@@ -4,7 +4,9 @@ b = float(input("Введите Ваш вес в килограммах (нап�
 s = [20]+["="]*15+[50] # 20 - minimal BMI, 50 - maximal BMI, one "=" - 2 points
 bmi = round(b/(a**2), 2)
 i = int(round((bmi-20)/2)) # position "|" in list, where 20 - minimal BMI
-s[i] = "|"
+s[i] = "|" 
+
+#here we need to take into account that [i] is not negative, but "if" cannot be used, because we have not passed it yet. YAGNI :)
 
 print ("Ваш индекс массы тела: ", bmi)
 print (*s, sep="") 
