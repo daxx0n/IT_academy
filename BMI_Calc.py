@@ -6,7 +6,7 @@ bmi = round(b/(a**2), 2)
 i = int(round((bmi-20)/2)) # position "|" in list, where 20 - minimal BMI
 s[i] = "|" 
 
-#here we need to take into account that [i] is not negative, but "if" cannot be used, because we have not passed it yet. YAGNI :)
+#here we must check that [i] is not negative, but "if" cannot be used, because we have not passed it yet. YAGNI :)
 
 print ("Ваш индекс массы тела: ", bmi)
 print (*s, sep="") 
