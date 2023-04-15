@@ -1,6 +1,6 @@
 import os
 
-def menu():
+def print_and_choice_menu():
     print("Добро пожаловать в калькулятор BMI!")
     print("Что бы вы хотели сделать?")
     print("1. Вывести список пользователей", "(W)")
@@ -9,14 +9,34 @@ def menu():
     print("4. Удалить выбранного пользователя", "(D)")
     print("5. Добавить пользователя", "(A)")
     print("6. Выход", "(Q)")
-
-menu()
+    choice = input ("Введите свой выбор: ")
+    os.system('clear') 
+    return choice
 
 def list_of_users():
-    users = {1:"Stas", 2:"Petya"}
+    login = {
+        1:"Царь", 
+        2:"Царевич",
+        3:"Король",
+        4:"Королевич",
+        5:"Сапожник"
+        }
+    return(login) 
 
-print (list_of_users([]))
-#1. многопольз калькулятор БМИ(словарь)
+def choice_option():
+    if print_and_choice_menu == "W":
+        print(list_of_users())   
+
+
+def main ():
+    while print_and_choice_menu != "Q":
+        list_of_options = print_and_choice_menu()
+        choice_option(list_of_options)
+
+
+main()
+
+#1. многопольз калькулятор БМИ(словарь) на 5 человек, шкалу тоже надо выводить
 #2. Храним рост, вес, пол,
 #3. Меню:CRUD(L)
 #    1. Вывести список польз(ключ - login)(L)
