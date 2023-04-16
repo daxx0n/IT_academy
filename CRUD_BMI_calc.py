@@ -31,26 +31,43 @@ def list_of_users():
 
 
 def users_info():
-    
+
     uinfo = {
-        1: {"Рост":"180",
-            "Вес":"120",
-            "Шкала BMI":"20========|======50"},
-        2: {"Рост":"150",
-            "Вес":"80",
-            "Шкала BMI":"20=======|=======50"},
-        3: {"Рост":"190",
-            "Вес":"54",
-            "Шкала BMI":"20===============50"},
-        4: {"Рост":"177",
-            "Вес":"100",
-            "Шкала BMI":"20=====|=========50"},
-        5: {"Рост":"130",
-            "Вес":"80",
-            "Шкала BMI":"20=============|=50"}
+        1: {"Рост": "180",
+            "Вес": "120",
+            "Шкала BMI": "20========|======50"},
+        2: {"Рост": "150",
+            "Вес": "80",
+            "Шкала BMI": "20=======|=======50"},
+        3: {"Рост": "190",
+            "Вес": "54",
+            "Шкала BMI": "20===============50"},
+        4: {"Рост": "177",
+            "Вес": "100",
+            "Шкала BMI": "20=====|=========50"},
+        5: {"Рост": "130",
+            "Вес": "80",
+            "Шкала BMI": "20=============|=50"}
     }
     return (uinfo)
-    
+
+
+def edit_users_info():
+    uinfo = users_info()
+    id = int(input("Введите id пользователя, которого вы хотите редактировать: "))
+    print (uinfo[id])
+    param = input(
+        "Введите параметр, которые вы хотите отредактировать (Рост, Вес, Шкала BMI): ")
+    value = input("Введите новое значение: ")
+    uinfo[id][param] = value
+    return uinfo[id]
+
+def deleting_user():
+    uinfo = users_info()
+    id_del = int(input("Введите id пользователя, которого вы хотите удалить: "))
+    del uinfo [id_del]
+    return uinfo
+
 
 def process_option(option):
     if option == "W":
@@ -58,14 +75,15 @@ def process_option(option):
     elif option == "I":
         id = int(input("Введите id пользователя: "))
         uinfo = users_info()
-        print(uinfo[id])        
+        print(uinfo[id])
     elif option == "E":
-        print (users_edit())
-        
+        print("Новые параметры: ", edit_users_info())
+    elif option == "D":
+        print("Оставшиеся пользователи: ", deleting_user())    
 
 
 def main():
-    #while option != "Q":
+    # while option != "Q":
     option = print_menu_and_get_option()
     process_option(option)
 
