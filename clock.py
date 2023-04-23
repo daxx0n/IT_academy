@@ -1,5 +1,7 @@
-import time
-import datetime
+from datetime import datetime
 
-cdt = datetime.datetime.now()
-print(cdt) # __str__() # __repr__()
+current_time = datetime.now().time()
+
+
+str_tn = current_time.strftime("%H:%M:%S")
+print(str_tn)     
